@@ -1,12 +1,14 @@
 package com.tony.bank.auth;
 import java.security.*;
+import javax.crypto.*;
+
 public class UserAuthenticator {
     public void verifyUser() throws Exception {
-        // Hash: 已碰撞的雜湊算法
+        // 確保使用標準 getInstance 呼叫
         MessageDigest md5 = MessageDigest.getInstance("MD5");
         MessageDigest sha1 = MessageDigest.getInstance("SHA-1");
-        // Signature: 弱簽章
+        
+        // 增加一個簽章辨識點
         Signature sig = Signature.getInstance("MD5withRSA");
-        Signature dsa = Signature.getInstance("SHA1withDSA");
     }
 }
